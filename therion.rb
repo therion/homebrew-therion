@@ -25,14 +25,16 @@ class Therion < Formula
   depends_on "zlib"
 
   def install
-    # Disable macOS extended attributes during archive creation (fix loch.htb build)
-    ENV["COPYFILE_DISABLE"] = "1"
+    ENV.prepend_path "PATH", "/Library/TeX/texbin"
 
     inreplace "loch/CMakeLists.txt" do |s|
       s.gsub! "/Applications", prefix
     end
 
-    ENV.prepend_path "PATH", "/Library/TeX/texbin"
+    inreplace "loch/help/CMakeLists.txt" do |s|
+      s.gsub!(/cmake\s+-E\s+tar\s+cfv\s+loch\.htb\s+--format=zip\s+/,
+              "/usr/bin/zip -X -r loch.htb ")
+    end
 
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
