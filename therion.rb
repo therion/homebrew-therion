@@ -19,16 +19,22 @@ class Therion < Formula
   depends_on "pkg-config"
   depends_on "proj"
   depends_on "tcl-tk"
+  depends_on "bwidget"
   depends_on "vtk"
   depends_on "wxwidgets"
   depends_on "zlib"
 
   def install
+    ENV.prepend_path "PATH", "/Library/TeX/texbin"
+
     inreplace "loch/CMakeLists.txt" do |s|
       s.gsub! "/Applications", prefix
     end
 
-    ENV.prepend_path "PATH", "/Library/TeX/texbin"
+    inreplace "loch/help/CMakeLists.txt" do |s|
+      s.gsub!(%r{COMMAND\s+\$\{CMAKE_COMMAND\}\s+-E\s+tar\s+cfv\s+loch\.htb\s+--format=zip\s+loch\.hhp\s+loch\.hhc\s+[\s\r\n]+loch\.hhk\s+loch\.htm},
+              "COMMAND /usr/bin/zip -X loch.htb loch.hhp loch.hhc loch.hhk loch.htm")
+    end
 
     mkdir "build" do
       system "cmake", "-GNinja", "..", *std_cmake_args
