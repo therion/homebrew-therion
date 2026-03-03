@@ -32,8 +32,11 @@ class Therion < Formula
     end
 
     inreplace "loch/help/CMakeLists.txt" do |s|
-      s.gsub!(/cmake\s+-E\s+tar\s+cfv\s+loch\.htb\s+--format=zip\s+/,
-              "/usr/bin/zip -X -r loch.htb ")
+      s.gsub!(
+        'COMMAND ${CMAKE_COMMAND} -E tar cfv loch.htb --format=zip loch.hhp loch.hhc
+                loch.hhk loch.htm',
+        'COMMAND /usr/bin/zip -X -r loch.htb loch.hhp loch.hhc loch.hhk loch.htm'
+      )
     end
 
     mkdir "build" do
