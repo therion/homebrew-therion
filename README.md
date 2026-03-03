@@ -83,24 +83,6 @@ You should be able to:
 - run Therion compiler by typing `therion` command to Terminal window
 - launch Loch viewer from Launchpad
 
-## Verify install
-
-Run these in Terminal:
-
-`therion --version`
-
-`brew test therion`
-
-`xtherion`
-
-If you copied Loch to Applications:
-
-`open /Applications/loch.app`
-
-Otherwise you can launch it directly from the installation prefix:
-
-`open "$(brew --prefix therion)/loch.app"`
-
 ## Upgrade
 
 Launch Terminal app and type:
