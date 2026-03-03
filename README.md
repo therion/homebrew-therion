@@ -45,7 +45,7 @@ If you want to disable Homebrew analytics, run:
 
 `brew install --cask xquartz`
 
-`brew install --cask mactex`
+`brew install --cask basictex`
 
 ### 3. Install Therion
 
@@ -75,7 +75,9 @@ Loch is installed inside the Therion Cellar prefix. If you have an older version
 
 ## Running apps
 
-After successful installation you should be able to:
+Open a new Terminal window.
+
+You should be able to:
 
 - start XTherion by typing `xtherion` command to Terminal window
 - run Therion compiler by typing `therion` command to Terminal window
@@ -133,25 +135,3 @@ Solution/Workaround:
 Apple Silicon: `echo 'export PATH="/opt/homebrew/opt/tcl-tk/bin:$PATH"' >> ~/.zshrc` \
 Intel: `echo 'export PATH="/usr/local/opt/tcl-tk/bin:$PATH"' >> ~/.zshrc`
 - Open new Terminal window and run XTherion. It should use newer Tcl/Tk version from now on. **You will probably need to apply also the next fix: XTherion - can't find package BWidget**.
-
-### XTherion - can't find package BWidget
-
-You may see the following error after forcing Homebrew's Tcl/Tk version instead of the one provided by Apple: 
-
-    Error in startup script: can't find package BWidget
-        while executing
-    "package require BWidget"
-        (file "/opt/homebrew/bin/xtherion" line 12786)
-
-Solution/Workaround:
-
-- First try pointing Tcl at Homebrew's BWidget (recommended): \
-`echo 'export TCLLIBPATH="$(brew --prefix bwidget)/lib"' >> ~/.zshrc`
-- If that still doesn't work, you can fall back to symlinking BWidget from `/System/Library/Tcl/` into Homebrew Tcl/Tk's lib dir (more invasive): \
-Apple Silicon: `ln -s /System/Library/Tcl/bwidget1.9.1 /opt/homebrew/opt/tcl-tk/lib/bwidget1.9.1` \
-Intel: `ln -s /System/Library/Tcl/bwidget1.9.1 /usr/local/opt/tcl-tk/lib/bwidget1.9.1`
-- Open new Terminal window and run XTherion. It should work OK from now on.
-
-### Old issues 
-
-- [solved] Loch scene rendering on Retina / HiDPI screen - see https://github.com/therion/therion/issues/399
