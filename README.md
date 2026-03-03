@@ -49,7 +49,7 @@ If you want to disable Homebrew analytics, run:
 
 ### 3. Install Therion
 
-If you already have Therion installed from the previous tap, please run the following commands first:
+If you already have Therion installed from the previous tap (ladislavb/homebrew-therion), please run the following commands first:
 
 `brew uninstall therion`
 
