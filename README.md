@@ -56,7 +56,7 @@ MacTeX provides TeX/pdfTeX tools used by Therion to generate map outputs (e.g., 
 
 ### 3. Install Therion
 
-If you already have Therion installed from the previous tap (ladislavb/homebrew-therion), please uninstall it first and untap the old repository:
+Legacy migration step (skip this on new installs): if you already have Therion installed from the old tap (ladislavb/homebrew-therion), uninstall it first and untap the old repository:
 
     brew uninstall therion && brew untap ladislavb/homebrew-therion
 
