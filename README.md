@@ -116,4 +116,4 @@ Solution/Workaround:
 - Add homebrew Tcl/Tk version to the first place in $PATH variable: \
 Apple Silicon: `echo 'export PATH="/opt/homebrew/opt/tcl-tk/bin:$PATH"' >> ~/.zshrc` \
 Intel: `echo 'export PATH="/usr/local/opt/tcl-tk/bin:$PATH"' >> ~/.zshrc`
-- Open new Terminal window and run XTherion. It should use newer Tcl/Tk version from now on. **You will probably need to apply also the next fix: XTherion - can't find package BWidget**.
+- Open new Terminal window and run XTherion. It should use newer Tcl/Tk version from now on.
