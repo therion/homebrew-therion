@@ -44,7 +44,7 @@ If your macOS doesn't contain X11 server (10.12 Sierra+) install it by following
 
 `brew untap ladislavb/homebrew-therion`
 
-`brew tap therion/therion-homebrew`
+`brew tap therion/homebrew-therion`
 
 `brew install therion`
 
