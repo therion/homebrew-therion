@@ -30,20 +30,19 @@ Intel: `eval "$(/usr/local/bin/brew shellenv)"`
 
 Test it:
 
-`brew update`
-
-`brew doctor`
+    brew update
+    brew doctor
 
 If you want to disable Homebrew analytics, run:
 
-`brew analytics off`
+    brew analytics off
 
 ### 2. Install Prerequisites
 
 - XQuartz provides the X11 server required by XTherion (X11 GUI).
 - MacTeX provides TeX/LaTeX tools used by Therion to generate map outputs (e.g., PDF) and related typesetting.
 
-`brew install --cask xquartz`
+    brew install --cask xquartz
 
 `brew install --cask basictex`
 
@@ -65,7 +64,7 @@ The formula is typically updated after each stable Therion release and/or when m
 
 If you want to test the latest (development) revision from Therion's source code on GitHub, run:
 
-`brew install --HEAD therion`
+    brew install --HEAD therion
 
 ### 4. Copying Loch to /Applications
 
@@ -83,7 +82,7 @@ You should be able to:
 - run Therion compiler by typing `therion` command to Terminal window
 - launch Loch viewer from Launchpad
 
-## Upgrade
+## Update
 
 Launch Terminal app and type:
 
