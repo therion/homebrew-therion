@@ -17,9 +17,9 @@ class Therion < Formula
   depends_on "lcdf-typetools"
   depends_on "libpng"
   depends_on "pkg-config"
-  depends_on "proj"
   depends_on "bwidget"
   depends_on "tcl-tk"
+  depends_on "proj"
   depends_on "vtk"
   depends_on "wxwidgets"
   depends_on "zlib"
@@ -35,7 +35,7 @@ class Therion < Formula
       s.gsub!(
         /COMMAND\s+\$\{CMAKE_COMMAND\}\s+-E\s+tar\s+cfv\s+loch\.htb\s+--format=zip\s+loch\.hhp\s+loch\.hhc\s+
           [\s\r\n]+loch\.hhk\s+loch\.htm/x,
-        "COMMAND /usr/bin/zip -X loch.htb loch.hhp loch.hhc loch.hhk loch.htm"
+        "COMMAND /usr/bin/zip -X loch.htb loch.hhp loch.hhc loch.hhk loch.htm",
       )
     end
 
